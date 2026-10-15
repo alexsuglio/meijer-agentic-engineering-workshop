@@ -10,9 +10,11 @@ owner permissions; cloning does not turn ownership into read-only access.
 Stop the current HTTP server with **Ctrl+C in the terminal that started it**.
 Stop any active Copilot edit session. Keep the entire old clone and its changes.
 From a parent directory, choose a new destination name that does not exist:
+Use the public URL below, or substitute your facilitator's internal distribution
+URL.
 
 ```sh
-git clone --branch workshop-v1 --single-branch "<INTERNAL_DISTRIBUTION_URL>" freshcart-round-2
+git clone --branch workshop-v1 --single-branch https://github.com/alexsuglio/meijer-agentic-engineering-workshop.git freshcart-round-2
 cd freshcart-round-2
 git switch -c practice/round-2
 npm ci

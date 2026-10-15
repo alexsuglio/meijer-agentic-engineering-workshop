@@ -23,11 +23,11 @@ Or use `pnpm install --frozen-lockfile` and `pnpm start` with pnpm 10.
 Open **http://127.0.0.1:3000**. No build step or additional service is needed.
 
 Read [setup](docs/setup.md), then follow the [participant guide](docs/participant-guide.md).
-After an internal release has been published, replace the URL below with the
-facilitator's read-only distribution URL:
+Clone the public workshop below, or substitute your facilitator's internal
+read-only distribution URL if one is provided:
 
 ```sh
-git clone "<INTERNAL_DISTRIBUTION_URL>" freshcart-practice
+git clone https://github.com/alexsuglio/meijer-agentic-engineering-workshop.git freshcart-practice
 cd freshcart-practice
 git switch -c practice/local workshop-v1
 npm ci
@@ -71,6 +71,7 @@ before the workshop. Keep solutions in `solutions/`, not active starter modules.
 - [Solutions and backups](docs/solutions.md): explicit, narrow local application.
 - [Rehearsal](docs/rehearsal.md): repeat practice without permanently fixing main.
 - [Facilitator script](docs/facilitator-guide.md): complete two-hour run of show.
+- [Presenter companion](docs/presenter-companion.md): speaking notes, agent roles and live-demo cues.
 - [Troubleshooting](docs/troubleshooting.md): setup, tests, clients and recovery.
 - [Print reference](docs/quick-reference.html): designed for one A4 or Letter page.
 - [Presenter cloud demo](docs/presenter-cloud-demo.md): optional owner-only `/delegate`.

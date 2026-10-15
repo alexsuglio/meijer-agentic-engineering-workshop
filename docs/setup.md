@@ -13,8 +13,9 @@ desktop app through your organization's approved installation process. Use npm
 (included with Node) OR pnpm 10. You do not need both. No Docker, Python, database,
 app API key, cloud subscription or build tooling is required.
 
-Get the internal clone URL from your facilitator. Read permission is enough:
-remote permissions govern publishing, not editing files you own locally.
+Use the public clone URL below, or your facilitator's internal distribution URL.
+Read permission is enough: remote permissions govern publishing, not editing
+files you own locally.
 An organization's Copilot entitlement and policy can still restrict agent use;
 repository read access does not itself grant Copilot.
 
@@ -42,17 +43,18 @@ notes; do not describe a target version as tested evidence.
 
 ## Clone and make a local practice branch
 
-Replace the angle-bracketed URL before running:
+Clone the public starter, substituting an internal URL if your facilitator
+provides one:
 
 ```sh
-git clone "<INTERNAL_DISTRIBUTION_URL>" freshcart-practice
+git clone https://github.com/alexsuglio/meijer-agentic-engineering-workshop.git freshcart-practice
 cd freshcart-practice
 git tag --list workshop-v1
 git switch -c practice/local workshop-v1
 ```
 
 A branch is a local line of work; `workshop-v1` is the fixed starter tag. If the
-tag is missing, stop and ask the facilitator for the internal baseline commit.
+tag is missing, stop and ask the facilitator for the verified baseline commit.
 Do not guess which revision is the starter. This command creates a local branch
 only; it does not create a remote branch. If `practice/local` already exists,
 use a new name, for example `practice/local-2`, rather than deleting old work.

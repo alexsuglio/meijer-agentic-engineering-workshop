@@ -1,8 +1,9 @@
 # Maintainer distribution guide
 
-This guide is for a future, separately authorized publication. The local starter
-is validated; no remote has been configured or publication performed. Do not run
-remote-write steps as part of participant practice.
+The public presenter repository is
+[alexsuglio/meijer-agentic-engineering-workshop](https://github.com/alexsuglio/meijer-agentic-engineering-workshop).
+This guide covers a future, separately authorized internal distribution.
+Do not run remote-write steps as part of participant practice.
 
 ## Release gate before import
 
