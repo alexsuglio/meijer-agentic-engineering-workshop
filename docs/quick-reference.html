@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FreshCart Ops - one-page workshop reference</title>
+  <style>
+    @page { size: auto; margin: 10mm; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #edf1e8; color: #173d31; font: 9pt/1.3 system-ui, sans-serif; }
+    .sheet { width: 180mm; margin: 8mm auto; padding: 0; background: white; }
+    header { border-bottom: 1.5mm solid #216148; padding: 4mm 0; margin-bottom: 4mm; }
+    h1 { margin: 0 0 1mm; font-size: 23pt; letter-spacing: -.7pt; }
+    header p { margin: 0; font-size: 9pt; }
+    .columns { display: grid; grid-template-columns: 1fr 1fr; gap: 6mm; }
+    section { break-inside: avoid; border-bottom: .25mm solid #cad7c3; padding: 0 0 3mm; margin-bottom: 3mm; }
+    h2 { margin: 0 0 1.5mm; font-size: 11pt; }
+    p { margin: 1.3mm 0; }
+    pre { margin: 1.5mm 0; padding: 2mm; background: #f0f4e9; white-space: pre-wrap; overflow-wrap: anywhere; font: 8pt/1.25 ui-monospace, monospace; }
+    code { font-family: ui-monospace, monospace; font-size: 8pt; }
+    .prompt { border-left: .7mm solid #216148; padding-left: 2mm; }
+    footer { border-top: .4mm solid #216148; padding-top: 2mm; font-size: 7.7pt; }
+    .screen-note { max-width: 180mm; margin: 5mm auto; font-size: 10pt; }
+    @media print { body { background: white; } .sheet { margin: 0; } .screen-note { display: none; } }
+    @media screen and (max-width: 760px) { .sheet { width: auto; margin: 16px; } .columns { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <p class="screen-note">Print A4 or Letter, portrait, 100%, headers/footers off. Both formats were verified as one page in Chromium; confirm your printer preview before printing.</p>
+  <main class="sheet">
+    <header><h1>FreshCart Ops</h1><p>Inspect → constrain → implement → verify · VS Code / Copilot CLI / desktop app</p></header>
+    <div class="columns">
+      <div>
+        <section><h2>Start locally</h2>
+          <pre>npm ci
+npm run setup:check
+npm test
+npm start</pre>
+          <p>pnpm: <code>pnpm install --frozen-lockfile</code>, then the same <code>pnpm run</code>, <code>pnpm test</code>, <code>pnpm start</code> commands.</p>
+          <p>Open <strong>http://127.0.0.1:3000</strong>. Keep one server terminal and one command terminal. Compare its printed checkout path with every agent session.</p>
+        </section>
+        <section><h2>01 / VS Code: stock clarity</h2>
+          <p><code>src/availability.js</code></p>
+          <p>Available = max(0, onHand − reserved). Zero is out first; positive quantity ≤ threshold is low.</p>
+          <p class="prompt">Read the rules and classifier. Implement only Lab1; preserve stock math and other labs. Run baseline and Lab1 checks.</p>
+          <pre>npm run test:lab1
+git diff -- src/availability.js</pre>
+          <p><strong>Checkpoint:</strong> 10 on hand,8 reserved,threshold3 =2 / Low stock. Low filter: 3 products; Needs attention: 5, including 2 out of stock.</p>
+        </section>
+        <section><h2>02 / CLI: BOGO regression</h2>
+          <p><code>src/pricing.js</code></p>
+          <p class="prompt">Reproduce 3×349 incorrectly charging349. Fix unpaired BOGO units within each SKU. Preserve standard prices and validation.</p>
+          <pre>npm run test:lab2</pre>
+          <p><strong>Checkpoint:</strong> q3 costs698 cents. q5 costs1047. Two different single-unit BOGO SKUs cost698, not349.</p>
+        </section>
+      </div>
+      <div>
+        <section><h2>03 / App: explained replacements</h2>
+          <p>Select the <strong>same local repository</strong>, not another worktree. Plan first; Interactive for approved local work.</p>
+          <p><code>src/substitutions.js</code> plus<br><code>public/substitution-panel.js</code></p>
+          <p class="prompt">Implement deterministic helper AND UI: exact category/package, enough stock, all tags, no exclusions, known metadata, ≤120% list price. Max3, delta then SKU. Explicit Replace; clear no-match.</p>
+          <pre>npm run test:lab3</pre>
+          <p><strong>Checkpoint:</strong> OAT-003, OAT-002, OAT-004 with reasons. No change until click. Reload persists; reset restores seed.</p>
+        </section>
+        <section><h2>Inside Copilot, not your shell</h2>
+          <pre>/skills list
+/skills info pricing-regression
+/skills reload
+/agent</pre>
+          <p>Choose <strong>grocery-rules-reviewer</strong>. Ask for file/rule/expected/actual/pass-fail evidence. Execute tools are not a read-only sandbox.</p>
+          <p>Default to manual tool approval. Mode changes do not bypass tool denials. No participant <code>/delegate</code> or remote writes.</p>
+        </section>
+        <section><h2>Verify and replay safely</h2>
+          <p>Run baseline plus your lab test; read the diff; observe the browser. Unfinished other labs may intentionally fail acceptance.</p>
+          <pre>npm run solutions -- lab1 --preview
+npm run solutions -- lab1 --apply</pre>
+          <p>Inspect exact paths; type YES only by choice. Modified targets are backed up; other labs remain untouched.</p>
+          <p>Reset demo data resets browser data, <strong>not code</strong>. Stop old server with Ctrl+C; use a fresh clone/local branch from <code>workshop-v1</code>. Never delete or reset prior work.</p>
+        </section>
+      </div>
+    </div>
+    <footer>120 minutes: setup15 / IDE30 / CLI30 / break5 / app30 / wrap10. Each lab: frame5 / demo10 / practice15. Synthetic data, no medical claims, no payments. Full prompts and checkpoints: docs/participant-guide.md.</footer>
+  </main>
+</body>
+</html>

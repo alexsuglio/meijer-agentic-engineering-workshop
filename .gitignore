@@ -1,0 +1,7 @@
+node_modules/
+.DS_Store
+.workshop-backups/
+coverage/
+test-results/
+playwright-report/
+*.log

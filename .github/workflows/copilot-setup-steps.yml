@@ -1,0 +1,26 @@
+name: Copilot Setup Steps
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - .github/workflows/copilot-setup-steps.yml
+permissions:
+  contents: read
+jobs:
+  copilot-setup-steps:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+      - name: Set up Node
+        uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+      - name: Install workshop
+        run: npm ci
+      - name: Verify baseline environment
+        run: |
+          npm run setup:check
+          npm test

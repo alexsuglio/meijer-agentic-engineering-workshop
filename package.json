@@ -1,0 +1,22 @@
+{
+  "name": "freshcart-ops-workshop",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "A local-first grocery operations workshop across three Copilot surfaces.",
+  "engines": { "node": ">=24 <25" },
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "setup:check": "node scripts/setup-check.js",
+    "test": "node --test test/*.test.js",
+    "test:lab1": "node --test acceptance/availability.test.js",
+    "test:lab2": "node --test acceptance/pricing.test.js",
+    "test:lab3": "node --test acceptance/substitutions.test.js",
+    "test:acceptance": "node --test acceptance/*.test.js",
+    "verify": "node scripts/verify.js",
+    "solutions": "node scripts/solutions.js",
+    "validate:matrix": "node scripts/validate-matrix.js",
+    "docs:check": "node scripts/check-docs.js"
+  }
+}

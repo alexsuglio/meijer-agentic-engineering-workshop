@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#174d3c">
+  <title>FreshCart Ops | Pickup desk</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script type="module" src="/app.js"></script>
+</head>
+<body>
+  <a class="skip" href="#catalog">Skip to catalog</a>
+  <header class="topbar">
+    <a class="brand" href="/"><span class="brand-mark" aria-hidden="true">fc</span><span>FreshCart<span class="brand-sub">OPERATIONS WORKSPACE</span></span></a>
+    <div class="top-actions"><span class="local-pill">LOCAL DEMO</span><button id="reset" class="button-secondary">Reset demo data</button></div>
+  </header>
+  <main>
+    <section class="intro" aria-labelledby="page-title">
+      <div><p class="eyebrow">THE NEIGHBORHOOD PICKUP DESK</p><h1 id="page-title">Good groceries.<br>A smoother shift.</h1><p class="intro-copy">Browse the shelves, check the basket, and make the next pickup right.</p></div>
+      <aside class="shift-card"><span class="small-label">YOUR WORKBENCH</span><strong>Three small changes.<br>One better workflow.</strong><span>01 Stock clarity / 02 Fair pricing<br>03 Thoughtful substitutions</span></aside>
+    </section>
+    <div id="feedback" role="status" aria-live="polite" class="feedback">Demo ready. Changes stay in this browser.</div>
+    <div id="error" role="alert" class="error" hidden></div>
+    <section class="metrics" aria-label="Shift overview">
+      <div><span class="metric-label">ON THE SHELVES</span><strong>24</strong><span>synthetic products</span></div>
+      <div><span class="metric-label">PICKUP QUEUE</span><strong>01</strong><span>order to review</span></div>
+      <div><span class="metric-label">TODAY'S FOCUS</span><strong class="focus-metric">Better decisions</strong><span>local data, real interactions</span></div>
+    </section>
+    <div class="workspace">
+      <section id="catalog" aria-labelledby="catalog-title">
+        <div class="section-heading"><div><p class="eyebrow">01 / THE SHELVES</p><h2 id="catalog-title">Product catalog</h2></div><span id="results-count" class="muted"></span></div>
+        <div class="filters">
+          <label class="search-field">Find a product<input id="search" type="search" placeholder="Try oat, granola, or a SKU"></label>
+          <label>Department<select id="department"><option value="all">All departments</option></select></label>
+          <label>Availability<select id="availability"><option value="all">All stock</option><option value="attention">Needs attention</option><option value="in">In stock</option><option value="low">Low stock</option><option value="out">Out of stock</option></select></label>
+        </div>
+        <p class="lab-note">Stock labels and the stock filter are your first workshop improvement.</p>
+        <div id="products" class="product-grid"></div>
+      </section>
+      <aside class="desk">
+        <section class="panel basket-panel" aria-labelledby="basket-title">
+          <p class="eyebrow">02 / THE BASKET</p><div class="section-heading"><h2 id="basket-title">Price check</h2><span class="chip">LIVE</span></div>
+          <p class="muted">BOGO = buy one, get one free, within the same SKU.</p>
+          <div id="basket"></div>
+          <div class="basket-total"><span>Basket total</span><strong id="basket-total"></strong></div>
+          <p class="fine-print">No tax or payment processing. Demo prices in USD.</p>
+        </section>
+        <section class="panel order-panel" aria-labelledby="order-title">
+          <p class="eyebrow">03 / THE PICKUP</p><h2 id="order-title">Order FC-1042</h2>
+          <p class="muted">Two oat drinks, ready for a thoughtful replacement.</p>
+          <div id="order"></div>
+          <div class="requirements"><strong>Requested metadata</strong><p>Vegan, gluten-free. Exclude milk, soy, tree-nuts. Same department and 1000 ml package; at most 120% of original list price.</p><p class="fine-print">Synthetic labels only. Not dietary or medical guidance.</p></div>
+          <button id="suggest" class="button-primary full">Find suitable replacements</button>
+          <div id="suggestions" aria-live="polite"></div>
+          <details class="manual"><summary>Choose a replacement manually</summary><p class="fine-print">Manual choice checks stock only. Review the metadata yourself.</p><label>Replacement product<select id="manual-product"></select></label><button id="manual-replace" class="button-secondary full">Replace selected item</button></details>
+        </section>
+      </aside>
+    </div>
+  </main>
+  <footer><strong>FreshCart Ops</strong><span>A fictional store. A hands-on engineering workshop.</span><span>No orders leave this device.</span></footer>
+</body>
+</html>

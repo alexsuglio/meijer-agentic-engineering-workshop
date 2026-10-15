@@ -1,0 +1,12 @@
+{
+  "lab1": [
+    { "target": "src/availability.js", "source": "solutions/lab1/src/availability.js" }
+  ],
+  "lab2": [
+    { "target": "src/pricing.js", "source": "solutions/lab2/src/pricing.js" }
+  ],
+  "lab3": [
+    { "target": "src/substitutions.js", "source": "solutions/lab3/src/substitutions.js" },
+    { "target": "public/substitution-panel.js", "source": "solutions/lab3/public/substitution-panel.js" }
+  ]
+}
