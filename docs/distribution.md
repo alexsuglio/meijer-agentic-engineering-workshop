@@ -1,7 +1,7 @@
 # Maintainer distribution guide
 
 The public presenter repository is
-[alexsuglio/meijer-agentic-engineering-workshop](https://github.com/alexsuglio/meijer-agentic-engineering-workshop).
+[alexsuglio/agentic-engineering-workshop-dev-days](https://github.com/alexsuglio/agentic-engineering-workshop-dev-days).
 This guide covers a future, separately authorized internal distribution.
 Do not run remote-write steps as part of participant practice.
 

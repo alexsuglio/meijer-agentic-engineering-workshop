@@ -27,7 +27,7 @@ Clone the public workshop below, or substitute your facilitator's internal
 read-only distribution URL if one is provided:
 
 ```sh
-git clone https://github.com/alexsuglio/meijer-agentic-engineering-workshop.git freshcart-practice
+git clone https://github.com/alexsuglio/agentic-engineering-workshop-dev-days.git freshcart-practice
 cd freshcart-practice
 git switch -c practice/local workshop-v1
 npm ci

@@ -47,7 +47,7 @@ Clone the public starter, substituting an internal URL if your facilitator
 provides one:
 
 ```sh
-git clone https://github.com/alexsuglio/meijer-agentic-engineering-workshop.git freshcart-practice
+git clone https://github.com/alexsuglio/agentic-engineering-workshop-dev-days.git freshcart-practice
 cd freshcart-practice
 git tag --list workshop-v1
 git switch -c practice/local workshop-v1

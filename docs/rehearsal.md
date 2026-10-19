@@ -14,7 +14,7 @@ Use the public URL below, or substitute your facilitator's internal distribution
 URL.
 
 ```sh
-git clone --branch workshop-v1 --single-branch https://github.com/alexsuglio/meijer-agentic-engineering-workshop.git freshcart-round-2
+git clone --branch workshop-v1 --single-branch https://github.com/alexsuglio/agentic-engineering-workshop-dev-days.git freshcart-round-2
 cd freshcart-round-2
 git switch -c practice/round-2
 npm ci
